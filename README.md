@@ -1,1 +1,10 @@
 # knights-tour
+This is a project I completed for my data structures course. The knight's tour is a pretty classic problem. You can find plenty about it on [wikipedia](https://en.wikipedia.org/wiki/Knight%27s_tour) and on [mayhematics](http://www.mayhematics.com/t/t.htm). You can fool around with the problem yourself [here](http://www.maths-resources.com/knights/). But, basically, you want to take the knight chess piece to every square on the chessboard, moving to each square only once.  
+
+This is a graph problem, and a really great write-up on how graphs and computers apply to the knight's tour problem can be found [here](https://bradfieldcs.com/algos/graphs/knights-tour/). I really recommend that read if you are here looking to understand graphs and the knight's tour.   
+
+This program is barebones. As written, the program will print out the path of the knight on 5-x-5 boards through 60-x-60 boards with the knight starting from the bottom corner of the board. As written, the program uses the [Warnsdorff heuristic](http://warnsdorff.com/) to choose its paths with Roth tie-breaking. Warnsdorff's heuristic chooses the next legal move that itself allows the least legal moves possible. If two moves tie, Roth's heuristic chooses the move to the square with the farthest Euclidean distance from the center of the board. You can try uses the heuristic yourself on the [board](http://www.maths-resources.com/knights/) mentioned above. It works! 
+
+The program uses [depth-first search](https://en.wikipedia.org/wiki/Depth-first_search#:~:text=Depth%2Dfirst%20search%20(DFS),along%20each%20branch%20before%20backtracking.) with backtracking. DFS itself is linear, O(V+E), but the backtracking causes that to become [exponential](https://www.codesdope.com/course/algorithms-knights-tour-problem/). Not good! But the Warnsdorff heuristic improves this. Now a [best-first search](https://en.wikipedia.org/wiki/Best-first_search#:~:text=Best%2Dfirst%20search%20is%20a,according%20to%20a%20specified%20rule.), it finds a direct path for the knight, O(V).
+
+If you have any questions, feel free to contact me. Have fun!
